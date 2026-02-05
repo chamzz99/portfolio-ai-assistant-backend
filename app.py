@@ -13,15 +13,13 @@ app = Flask(__name__)
 
 # --- 1. SECURITY CONFIGURATION ---
 
-# Define your real domain
-ALLOWED_DOMAIN = "https://chamzz99.github.io"
-ALLOWED_DOMAIN_X = "https://chamo.is-a.dev"
-# Define your local testing domain
-LOCAL_DOMAIN = "http://localhost:5173"
+# Define allowed domains
+ALLOWED_DOMAINS = ["*"]
+
 
 # Enable CORS (Browser Protection)
 CORS(app, resources={
-     r"/chat": {"origins": [ALLOWED_DOMAIN, ALLOWED_DOMAIN_X, LOCAL_DOMAIN]}})
+     r"/chat": {"origins": ALLOWED_DOMAINS}})
 
 # Setup Rate Limiter (Spam Protection)
 # This limits users by their IP address
@@ -43,8 +41,8 @@ def chat():
     origin = request.headers.get('Origin')
 
     # Allow if it's your site OR localhost (for testing)
-    if origin not in [ALLOWED_DOMAIN, LOCAL_DOMAIN]:
-        return jsonify({"error": "Access Denied: Invalid Origin"}), 403
+    # if origin not in ALLOWED_DOMAINS:
+    #     return jsonify({"error": "Access Denied: Invalid Origin"}), 403
 
     # --- LEVEL 2: Secret Key Check ---
     # You must send this header from your Frontend
