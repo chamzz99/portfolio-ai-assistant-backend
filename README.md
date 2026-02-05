@@ -93,14 +93,14 @@ Follow these steps to get the bot running on your machine.
    ```
 2. Create a Virtual Environment
 
-   ## Windows
+   ### Windows
 
    ```text
    python -m venv venv
    venv\Scripts\activate
    ```
 
-   ## Mac/Linux
+   ### Mac/Linux
 
    ```text
    python3 -m venv venv
@@ -158,10 +158,10 @@ Response:
 
 This project is ready to be deployed on PythonAnywhere, Heroku, or Render.
 
--PythonAnywhere: Upload files, set up a virtualenv, and point the WSGI configuration file to wsgi.py.
+-**PythonAnywhere:** Upload files, set up a virtualenv, and point the WSGI configuration file to wsgi.py.
 
--Environment: Ensure you set the OPENAI_API_KEY in the production environment variables.
+-**Environment:** Ensure you set the OPENAI_API_KEY in the production environment variables.
 
-🤝 Contributing
+## 🤝 Contributing
 
 Feel free to fork this repository and submit Pull Requests. If you find this template useful for your own portfolio, a star ⭐️ is appreciated!
