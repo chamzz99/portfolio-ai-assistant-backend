@@ -78,7 +78,7 @@ This project uses **Flask-CORS** to handle Cross-Origin Resource Sharing.
 
 - **Why is this needed?** Your frontend lives on `yourname.github.io` (Domain A), but your backend lives on `yourname.pythonanywhere.com` (Domain B). Browsers normally block this for security.
 - **How it works:**
-  The `CORS(app)` line in `app.py` automatically adds the necessary headers (`Access-Control-Allow-Origin`) to every response, allowing your Portfolio site to freely communicate with the Agent.
+  The `CORS(app)` line in `app.py` automatically adds the necessary headers (`Access-Control-Allow-Origin`) to every response, allowing your Portfolio site to freely communicate with the AI assistant.
 
 ---
 
@@ -89,7 +89,7 @@ Follow these steps to get the bot running on your machine.
 1. Clone the Repository
    ```text
    git clone https://github.com/chamzz99/portfolio-ai-assistant-backend.git
-   cd portfolio-agent-backend
+   cd portfolio-ai-assistant-backend
    ```
 2. Create a Virtual Environment
 
