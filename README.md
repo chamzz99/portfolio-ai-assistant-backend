@@ -77,19 +77,19 @@ Follow these steps to get the bot running on your machine.
 
 1. Clone the Repository
    ```text
-   git clone [https://github.com/yourusername/portfolio-agent-backend.git](https://github.com/yourusername/portfolio-agent-backend.git)
+   git clone https://github.com/chamzz99/portfolio-ai-assistant-backend.git
    cd portfolio-agent-backend
    ```
 2. Create a Virtual Environment
 
-   # Windows
+   ## Windows
 
    ```text
    python -m venv venv
    venv\Scripts\activate
    ```
 
-   # Mac/Linux
+   ## Mac/Linux
 
    ```text
    python3 -m venv venv
@@ -130,20 +130,17 @@ You can test the bot using cURL or Postman.
 
 Request:
 
-    ```text
     curl -X POST [http://127.0.0.1:5000/chat](http://127.0.0.1:5000/chat) \
     -H "Content-Type: application/json" \
-    -d '{"message": "What projects has he worked on?", "thread_id": "test_user_1"}'
-    ```
+    -d '{"message": "What projects has he worked on?",
+         "thread_id": "test_user_1"}'
 
 Response:
 
-    ```text
     JSON
     {
     "reply": "Chamod has worked on several exciting projects! 🚀 He built an Fashion recommendation Chatbot using OpenAI and Python..."
     }
-    ```
 
 ---
 
@@ -151,11 +148,10 @@ Response:
 
 This project is ready to be deployed on PythonAnywhere, Heroku, or Render.
 
-PythonAnywhere: Upload files, set up a virtualenv, and point the WSGI configuration file to wsgi.py.
+    --PythonAnywhere: Upload files, set up a virtualenv, and point the WSGI configuration file to wsgi.py.
 
-Environment: Ensure you set the OPENAI_API_KEY in the production environment variables.
+    --Environment: Ensure you set the OPENAI_API_KEY in the production environment variables.
 
 🤝 Contributing
-Feel free to fork this repository and submit Pull Requests. If you find this template useful for your own portfolio, a star ⭐️ is appreciated!
 
-Author: Chamod Sugathadasa
+    Feel free to fork this repository and submit Pull Requests. If you find this template useful for your own portfolio, a star ⭐️ is appreciated!
