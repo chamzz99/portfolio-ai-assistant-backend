@@ -17,6 +17,7 @@ Built with **Flask**, **LangChain**, and **OpenAI**, this assistant features sho
 - **🔄 Smart Rephrasing:** Automatically fixes broken grammar and resolves pronouns before searching the database.
 - **🎭 Custom Persona:** Easily adjustable tone (Friendly/Professional) and personality (currently set to "Chamzz" - a friendly tech enthusiast).
 - **🔌 API-First:** Built as a REST API (Flask) to easily integrate with React, Vue, or any frontend portfolio.
+- **🌐 CORS Enabled:** Pre-configured with `Flask-CORS` to allow requests from any frontend (perfect for GitHub Pages).
 
 ### Tech Stack
 
@@ -68,6 +69,16 @@ The assistant uses a RAG pipeline to retrieve relevant information from your res
 3.  **Rephrasing:** If the user says "Does _he_ know React?", the AI rewrites it to "Does _[Your Name]_ know React?" to ensure a good search.
 4.  **Retrieval:** The system searches your `data_loader.py` content for the most relevant answers.
 5.  **Generation:** The LLM constructs a friendly answer based _only_ on the facts found in your data.
+
+---
+
+## 🔒 A Note on CORS
+
+This project uses **Flask-CORS** to handle Cross-Origin Resource Sharing.
+
+- **Why is this needed?** Your frontend lives on `yourname.github.io` (Domain A), but your backend lives on `yourname.pythonanywhere.com` (Domain B). Browsers normally block this for security.
+- **How it works:**
+  The `CORS(app)` line in `app.py` automatically adds the necessary headers (`Access-Control-Allow-Origin`) to every response, allowing your Portfolio site to freely communicate with the Agent.
 
 ---
 
@@ -132,8 +143,7 @@ Request:
 
     curl -X POST [http://127.0.0.1:5000/chat](http://127.0.0.1:5000/chat) \
     -H "Content-Type: application/json" \
-    -d '{"message": "What projects has he worked on?",
-         "thread_id": "test_user_1"}'
+    -d '{"message": "What projects has he worked on?","thread_id": "test_user_1"}'
 
 Response:
 
@@ -148,10 +158,10 @@ Response:
 
 This project is ready to be deployed on PythonAnywhere, Heroku, or Render.
 
-    --PythonAnywhere: Upload files, set up a virtualenv, and point the WSGI configuration file to wsgi.py.
+-PythonAnywhere: Upload files, set up a virtualenv, and point the WSGI configuration file to wsgi.py.
 
-    --Environment: Ensure you set the OPENAI_API_KEY in the production environment variables.
+-Environment: Ensure you set the OPENAI_API_KEY in the production environment variables.
 
 🤝 Contributing
 
-    Feel free to fork this repository and submit Pull Requests. If you find this template useful for your own portfolio, a star ⭐️ is appreciated!
+Feel free to fork this repository and submit Pull Requests. If you find this template useful for your own portfolio, a star ⭐️ is appreciated!
