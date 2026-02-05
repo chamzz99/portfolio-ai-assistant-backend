@@ -1,0 +1,8 @@
+flask
+flask-cors
+python-dotenv
+flask-limiter
+langchain
+langchain-openai
+langchain-community
+faiss-cpu
